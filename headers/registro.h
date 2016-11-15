@@ -10,4 +10,9 @@ typedef struct strPixel{
 	int b;
 } Pixel;
 
+typedef struct strElemento{
+    Pixel pixel;
+    int altura
+} Elemento;
+
 #endif
