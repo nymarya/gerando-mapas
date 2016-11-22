@@ -11,7 +11,9 @@ int deslocamentoPonto(int index, int auxiliar, int tamanho, int fator, int vetor
 
             int fator_deslocamento = 2 * (rand()%fator) - fator;   
             if(fator > 1){
-                fator = fator /2;
+                fator /= 2;
+            } else{
+                fator_deslocamento = 0;
             }
         
             vetor[(index+auxiliar)/2] =
