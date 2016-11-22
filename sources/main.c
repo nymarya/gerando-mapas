@@ -31,6 +31,8 @@ int main(int n, char **str)
 		vetor[i] = 0;
 	}
 
+    //Gera números mais diversificados
+    //http://stackoverflow.com/questions/5574914/srandtimenull-doesnt-change-seed-value-quick-enough
 	srand(time(0) * getpid());
 
 	vetor[0] = rand()%300+70;
