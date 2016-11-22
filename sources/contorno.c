@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../headers/registro.h"
-#include <math.h>
+#include "../headers/contorno.h"
 
 
 int deslocamentoPonto(int index, int auxiliar, int tamanho, int fator, int vetor[tamanho])

@@ -4,11 +4,12 @@
 
 #include <stdio.h>
 
-typedef struct strPixel{
+//DECLARAÇÃO DE STRUCT RGB
+typedef struct RegPixel{
 	int r;
 	int g;
 	int b;
-} Pixel;
+} PIXEL;
 
 
 #endif
