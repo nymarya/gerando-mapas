@@ -1,11 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "../headers/contorno.h"
 #include "../headers/imagem.h"
 
 
 
-int main() {
+int main(int n, char **str)
+{
+    
+    char nome_do_arquivo[30];
+    strcpy(nome_do_arquivo, "terreno.ppm");
+
+	if(n>1){
+	    if(strcmp(str[1], "-o") == 0){
+		strcpy(nome_do_arquivo, str[2]);
+	    }
+	}
+        
+
 	int tam = 513; //2^9+1
 
 	int desloc = 128;
@@ -25,7 +38,7 @@ int main() {
 
 	deslocamentoPonto(0, tam-1, tam, desloc, vetor);
 	gerarMatriz(tam, matriz, vetor);
-	escreverImagem(tam, matriz);
+	escreverImagem(tam, matriz, nome_do_arquivo);
 
 
 }
