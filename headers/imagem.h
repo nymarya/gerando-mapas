@@ -13,7 +13,7 @@ typedef struct RegPixel{
 int gerarMatriz(int tam, PIXEL matriz[tam][tam], int vetor[tam]);
 
 //FUNÇÃO PARA GERAR ARQUIVO DE IMAGEM NO FORMATO PPM
-int escreverImagem(int tam, PIXEL matriz[tam][tam]);
+int escreverImagem(int tam, PIXEL matriz[tam][tam], char nome_do_arquivo[30]);
 
 
 #endif

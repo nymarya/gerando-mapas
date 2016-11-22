@@ -1,46 +1,29 @@
 #include <stdio.h>
 #include "../headers/contorno.h"
 
-int deslocamentoDireita(int tam, float desloc, int iInicial, int iFinal, int vetor[tam]){
 
-	if(iFinal-1 == iInicial){
-		return 0;
-	} else {
+int deslocamentoPonto(int index, int auxiliar, int tamanho, int fator, int vetor[tamanho])
+{
 
-		int indice = (iFinal + iInicial)/2; //CALCULANDO A METADE ENTRE OS INDICES
-		int valor = (vetor[iInicial]+vetor[iFinal])/2; //CALCULANDO MÉDIA ENTRE OS VALORES DOS DOIS EXTREMOS
+        if(auxiliar != index +1){
 
-		desloc /= 2.0; //CALCULANDO O DESLOCAMENTO
-
-		valor = valor + desloc; //CALCULANDO O NOVO VALOR PARA A METADE ENTRE OS INDICES
-
-		vetor[indice] = valor;
-
-		deslocamentoEsquerda(tam, desloc, indice, iFinal, vetor); 
-		deslocamentoDireita(tam, desloc, iInicial, indice, vetor);
-
-		return 0;
-	}
-
-}
-
-int deslocamentoEsquerda(int tam, float desloc, int iInicial, int iFinal, int vetor[tam]){
-
-	if(iFinal-1 == iInicial){
-		return 0;
-	} else {
-		int indice = (iFinal + iInicial)/2; //CALCULANDO A METADE ENTRE OS INDICES
-		int valor = (vetor[iInicial]+vetor[iFinal])/2; //CALCULANDO MÉDIA ENTRE OS VALORES DOS DOIS EXTREMOS
-
-		desloc /= 2.0; //CALCULANDO O DESLOCAMENTO
-
-		valor = valor + (valor*desloc); //CALCULANDO O NOVO VALOR PARA A METADE ENTRE OS INDICES
-		
-		vetor[indice] = valor;
-
-		deslocamentoDireita(tam, desloc, iInicial, indice, vetor);
-		deslocamentoEsquerda(tam, desloc, indice, iFinal, vetor); 
-
-		return 0;
-	}
+            int fator_deslocamento = 2 * (rand()%fator) - fator;   
+            if(fator > 1){
+                fator /= 2;
+            } else{
+                fator_deslocamento = 0;
+            }
+        
+            vetor[(index+auxiliar)/2] =
+                    (vetor[index] + vetor[auxiliar])/2;
+            vetor[(index+auxiliar)/2] += fator_deslocamento;
+            
+    
+            deslocamentoPonto(index, (index+auxiliar)/2, tamanho, fator, vetor);
+            deslocamentoPonto( (index+auxiliar)/2, auxiliar, tamanho, fator, vetor);
+            
+          
+            
+        }
+        
 }

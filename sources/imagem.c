@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <memory.h>
 #include "../headers/imagem.h"
 
 //GERAR MATRIZ COM OS ELEMENTOS DO VETOR
@@ -27,10 +29,14 @@ int gerarMatriz(int tam, PIXEL matriz[tam][tam], int vetor[tam]){
 
 
 //GERAR IMAGEM NO FORMATO PPM
-int escreverImagem(int tam, PIXEL matriz[tam][tam]){
-	FILE *arquivo;
+int escreverImagem(int tam, PIXEL matriz[tam][tam], char nome_do_arquivo[30]){
 	
-	arquivo = fopen( "../galeria/terreno.ppm", "w" );
+	char *endereco = "../galeria/";
+	char *caminho = malloc(strlen(endereco)+strlen(nome_do_arquivo)+1);
+	strcpy(caminho, endereco);
+	strcat(caminho, nome_do_arquivo);
+	FILE *arquivo;
+	arquivo = fopen(caminho, "w" );
 	
 	
 	fprintf(arquivo, "P3\n");
@@ -45,7 +51,8 @@ int escreverImagem(int tam, PIXEL matriz[tam][tam]){
 		}
 		fprintf(arquivo, "\n");
 	}
-
+	
+	free(caminho);
 	fclose(arquivo);
 	return 0;
 }

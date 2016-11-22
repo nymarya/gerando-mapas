@@ -1,12 +1,27 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "../headers/contorno.h"
 #include "../headers/imagem.h"
 
 
-int main() {
+
+int main(int n, char **str)
+{
+    
+    char nome_do_arquivo[30];
+    strcpy(nome_do_arquivo, "terreno.ppm");
+
+	if(n>1){
+	    if(strcmp(str[1], "-o") == 0){
+		strcpy(nome_do_arquivo, str[2]);
+	    }
+	}
+        
+
 	int tam = 513; //2^9+1
 
-	float desloc = 1.2;
+	int desloc = 128;
 	int vetor[tam]; 
 	PIXEL matriz[tam][tam];
 
@@ -15,13 +30,15 @@ int main() {
 		vetor[i] = 0;
 	}
 
-	vetor[0] = 250;
-	vetor[tam-1] = 201;
+	srand(time(0) * getpid());
+
+	vetor[0] = rand()%300+70;
+    vetor[tam-1] = rand()%300+70;
 
 
-	deslocamentoDireita(tam, desloc, 0, tam-1, vetor);
+	deslocamentoPonto(0, tam-1, tam, desloc, vetor);
 	gerarMatriz(tam, matriz, vetor);
-	escreverImagem(tam, matriz);
+	escreverImagem(tam, matriz, nome_do_arquivo);
 
 
 }

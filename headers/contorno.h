@@ -2,10 +2,8 @@
 #define CONTORNO_H
 
 
-//FUNÇÕES PARA CALCULAR O DESLOCAMENTO. INTERCALA AS DUAS FUNÇÕES PARA PERCORRER O VETOR E ALTERAR 
-//OS ELEMENTOS TANTO DA ESQUERDA PARA DIREITA, ASSIM COMO DA DIREITA PARA ESQUERDA
-int deslocamentoEsquerda(int tam, float desloc, int iInicial, int iFinal, int vetor[tam]);
-int deslocamentoDireita(int tam, float desloc, int iInicial, int iFinal, int vetor[tam]);
+//FUNÇÃO PARA GERAR O VETOR COM OS PONTOS COM O FATOR DESLOCAMENTO
 
+int deslocamentoPonto(int index, int auxiliar, int tamanho, int fator, int vetor[tamanho]);
 
 #endif
