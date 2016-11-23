@@ -11,26 +11,26 @@ int main(int n, char **str)
 {
     
     char nome_do_arquivo[30];
-    int desloc = 128;
-    strcpy(nome_do_arquivo, "terreno.ppm");
+    int desloc = 128; // fator deslocamento padrão
+    strcpy(nome_do_arquivo, "terreno.ppm"); //nome do arquivo padrão
 
 	if(n>1){
 	    if(strcmp(str[1], "-o") == 0){
-		  strcpy(nome_do_arquivo, str[2]);
+		  strcpy(nome_do_arquivo, str[2]); //Se o primeiro parâmetro for "-o", copia o nome
 		  
 		  if(n>3){
     		  if(strcmp(str[3], "-d") == 0){
-    		      desloc = atoi(str[4]);
+    		      desloc = atoi(str[4]);//Se o segundo parâmetor for "-d", altera o fator deslocamento
     		  }
 		  }
 
 	    }
 	    else if(strcmp(str[1], "-d") == 0){
-	        desloc = atoi(str[2]);
+	        desloc = atoi(str[2]);//Se o primeiro parâmetro for "-d", altera o fator deslocamento
 	        
 	        if(n>3){
     	      if(strcmp(str[3], "-o") == 0){
-    		      strcpy(nome_do_arquivo, str[4]);
+    		      strcpy(nome_do_arquivo, str[4]);//Se o segundo parâmetro for "-o", copia o nome
     		  }
 		    }
 
