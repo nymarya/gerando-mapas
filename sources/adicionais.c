@@ -10,7 +10,7 @@
 
 int cores[N][M] = {
 	{147, 25, 255}, //amanhecer
-	{0, 0, 0}, //dia
+	{102, 255, 255}, //dia
 	{0, 2, 76}, //anoitecer
 	{0, 0, 0} //noite
 
@@ -31,6 +31,13 @@ gerarGradiente(int tam, PIXEL matriz[tam][tam], Modo modo){
 				cores[modo][2]++;
 			} if(i%5 == 0){
 				cores[modo][1]++;
+			}
+		} else if( modo == DIA){
+		    if(i%2 ==0){
+				cores[modo][2]--;
+				cores[modo][1]--;
+			} if(i%5 == 0){
+				cores[modo][0]++;
 			}
 		}
 		
