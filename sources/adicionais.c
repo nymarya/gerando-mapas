@@ -26,12 +26,6 @@ gerarGradiente(int tam, PIXEL matriz[tam][tam], Modo modo){
 			if(i%5 == 0){
 				cores[modo][1]++;
 			}
-		} else if( modo == ANOITECER){
-			if(i%2 ==0){
-				cores[modo][2]++;
-			} if(i%5 == 0){
-				cores[modo][1]++;
-			}
 		} else if( modo == DIA){
 		    if(i%2 ==0){
 				cores[modo][2]--;
@@ -39,12 +33,21 @@ gerarGradiente(int tam, PIXEL matriz[tam][tam], Modo modo){
 			} if(i%5 == 0){
 				cores[modo][0]++;
 			}
+		} else if( modo == ANOITECER){
+			if(i%2 ==0){
+				cores[modo][2]++;
+			} if(i%5 == 0){
+				cores[modo][1]++;
+			}
+		} else if( modo == NOITE){
+			if(i%5 == 0){
+				cores[modo][2]++;
+			}
 		}
 		
 		for (j = 0; j < tam; j++) {
 			configuraPixel(&matriz[i][j], cores[modo][0], cores[modo][1], cores[modo][2]);
-			
-				
+					
 		}
 		
 	}
