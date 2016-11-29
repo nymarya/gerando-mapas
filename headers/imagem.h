@@ -11,5 +11,8 @@ int gerarMatriz(int tam, PIXEL matriz[tam][tam], int vetor[tam]);
 //FUNÇÃO PARA GERAR ARQUIVO DE IMAGEM NO FORMATO PPM
 int escreverImagem(int tam, PIXEL matriz[tam][tam], char nome_do_arquivo[30]);
 
+//FUNÇÃO PARA CONFIGURAR UM PIXEL
+void configuraPixel(PIXEL *pixel, int r, int g, int b);
+
 
 #endif

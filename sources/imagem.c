@@ -4,6 +4,15 @@
 #include "../headers/registro.h"
 #include "../headers/imagem.h"
 
+//DEFINE CORES DO PIXEL
+void configuraPixel(PIXEL *pixel, int r, int g, int b){
+
+	pixel->r = r;
+	pixel->g = g;
+	pixel->b = b;
+}
+
+
 //GERAR MATRIZ COM OS ELEMENTOS DO VETOR
 int gerarMatriz(int tam, PIXEL matriz[tam][tam], int vetor[tam]){
 	
@@ -12,14 +21,8 @@ int gerarMatriz(int tam, PIXEL matriz[tam][tam], int vetor[tam]){
 		for (j = 0; j < tam; j++) {
 
 			if (i > vetor[j]) {
-				matriz[i][j].r = 102;
-				matriz[i][j].g = 102;
-				matriz[i][j].b = 51;
-			} else {
-				matriz[i][j].r = 153;
-				matriz[i][j].g = 204;
-				matriz[i][j].b = 255;
-			}
+				configuraPixel(&matriz[i][j], 1, 2, 18);
+			} 
 				
 		}
 	}
