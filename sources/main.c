@@ -26,7 +26,7 @@ int main(int n, char **str)
         if(strcmp(str[1], "-o") == 0 && str[2][0] != '-'){
 		  strcpy(nome_do_arquivo, str[2]); //Se o primeiro parâmetro for "-o", copia o nome
 			  
-		if(n>3){
+		  if(n>3){
 	        if(strcmp(str[3], "-d") == 0 && str[4][0] != '-' ){
 			    desloc = atoi(str[4]);//Se o segundo parâmetor for "-d", altera o fator deslocamento
 			} else if(strcmp(str[3], "-m") == 0 && str[4][0] != '-'){
