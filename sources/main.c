@@ -102,7 +102,11 @@ int main(int n, char **str)
 	return 0;
     }
 }
-        
+    if(modo > 3){
+        modo = 3;
+    } else if(modo < 0){
+        modo = 0;
+    }    
 
     int tam = 513; //2^9+1
 
