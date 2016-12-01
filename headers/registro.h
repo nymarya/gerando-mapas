@@ -4,14 +4,14 @@
 
 #include <stdio.h>
 
-//DECLARAÇÃO DE STRUCT RGB
+/** Declaração do struct de Pixel. **/
 typedef struct RegPixel{
 	int r;
 	int g;
 	int b;
 } PIXEL;
 
-//DECLARAÇÃO DO ENUM
+/** Declaração do enum. **/
 typedef enum {
 	AMANHECER,
 	DIA, 
