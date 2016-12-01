@@ -26,82 +26,84 @@ int main(int n, char **str)
 	  if(strcmp(str[1], "-o") == 0 && str[2][0] != '-'){
 		strcpy(nome_do_arquivo, str[2]); //Se o primeiro parâmetro for "-o", copia o nome
 			  
-			if(n>3){
-			    if(strcmp(str[3], "-d") == 0 && str[4][0] != '-' ){
-				    desloc = atoi(str[4]);//Se o segundo parâmetor for "-d", altera o fator deslocamento
-				} else if(strcmp(str[3], "-m") == 0 && str[4][0] != '-'){
-					modo = atoi(str[4]);//Se o segundo parâmetro for "-m", recebe o modo
-			    } else{
-					printf("Comando inválido! Por favor, tente novamente\n");
-					return 0;
-			   	}
+		if(n>3){
+	        if(strcmp(str[3], "-d") == 0 && str[4][0] != '-' ){
+			    desloc = atoi(str[4]);//Se o segundo parâmetor for "-d", altera o fator deslocamento
+			} else if(strcmp(str[3], "-m") == 0 && str[4][0] != '-'){
+				modo = atoi(str[4]);//Se o segundo parâmetro for "-m", recebe o modo
+			} else{
+			    printf("Comando inválido! Por favor, tente novamente\n");
+			    return 0;
+			}
 					 
-				if(n>5){
-				    if(strcmp(str[5], "-m") == 0 && str[6][0] != '-' ){
-					    modo = atoi(str[6]);//Se o terceiro parâmetro for "-m", recebe o modo
-					} else if(strcmp(str[5], "-d") == 0 && str[6][0] != '-'){
-						desloc = atoi(str[6]);//Se o terceiro parâmetro for "-d", altera o fator deslocamento
-					} else{
-				    	printf("Comando inválido! Por favor, tente novamente\n");
-				    	return 0;
-				    }
-				}
-		 	}
-
-		} else if(strcmp(str[1], "-d") == 0 && str[2][0] != '-'){
-		    desloc = atoi(str[2]);//Se o primeiro parâmetro for "-d", altera o fator deslocamento
-			    
-			if(n>3){
-				if(strcmp(str[3], "-o") == 0 && str[4][0] != '-'){
-				    strcpy(nome_do_arquivo, str[4]);//Se o segundo parâmetro for "-o", copia o nome
-				} else if(strcmp(str[3], "-m") == 0 && str[4][0] != '-'){
-					modo = atoi(str[4]);//Se o segundo parâmetro for "-m", recebe o modo
-			    } else{
-					printf("Comando inválido! Por favor, tente novamente\n");
-					return 0;
-			   	}
-					  
-			    if(n>5){
-				    if(strcmp(str[5], "-m") == 0 && str[6][0] != '-'){
-					    modo = atoi(str[6]);//Se o terceiro parâmetro for "-m", recebe o modo
-					} else if(strcmp(str[5], "-o") == 0 && str[6][0] != '-'){
-					    strcpy(nome_do_arquivo, str[6]);//Se o terceiro parâmetro for "-o", copia o nome
-					} else{
-					    printf("Comando inválido! Por favor, tente novamente\n");
-						return 0;
-				    }  
+			if(n>5){
+				if(strcmp(str[5], "-m") == 0 && str[6][0] != '-' ){
+			        modo = atoi(str[6]);//Se o terceiro parâmetro for "-m", recebe o modo
+				} else if(strcmp(str[5], "-d") == 0 && str[6][0] != '-'){
+				    desloc = atoi(str[6]);//Se o terceiro parâmetro for "-d", altera o fator deslocamento
+				} else{
+				    printf("Comando inválido! Por favor, tente novamente\n");
+				    return 0;
 				}
 			}
-
-		} else if(strcmp(str[1], "-m") == 0 && str[2][0] != '-'){
-		    modo = atoi(str[2]);//Se o primeiro parâmetro for "-d", altera o fator deslocamento
-			    
-			if(n>3){
-					if(strcmp(str[3], "-d") == 0 && str[4][0] != '-'){
-					    desloc = atoi(str[4]);//Se o segundo parâmetro for "-d", altera o fator
-					} else if(strcmp(str[3], "-o") == 0 && str[4][0] != '-'){
-					    strcpy(nome_do_arquivo, str[4]);//Se o segundo parâmetro for "-o", copia o nome
-					} else{
-						printf("Comando inválido! Por favor, tente novamente\n");
-						return 0;
-			   	    }
-					  
-				    if(n>5){
-						if(strcmp(str[5], "-o") == 0 && str[6][0] != '-'){
-				   	  	    strcpy(nome_do_arquivo, str[6]);//Se o terceiro parâmetro for "-o", copia o nome
-						} else if(strcmp(str[5], "-d") == 0 && str[6][0] != '-'){
-							desloc = atoi(str[6]);//Se o terceiro parâmetro for "-d", altera o fator
-						} else{
-								 printf("Comando inválido! Por favor, tente novamente\n");
-								 return 0;
-						}
-			    	}
-		    }
-		} else{
-		    printf("Comando inválido! Por favor, tente novamente\n");
-			return 0;
 		}
+
+      } else if(strcmp(str[1], "-d") == 0 && str[2][0] != '-'){
+		 desloc = atoi(str[2]);//Se o primeiro parâmetro for "-d", altera o fator deslocamento
+			    
+		 if(n>3){
+			if(strcmp(str[3], "-o") == 0 && str[4][0] != '-'){
+				strcpy(nome_do_arquivo, str[4]);//Se o segundo parâmetro for "-o", copia o nome
+			} else if(strcmp(str[3], "-m") == 0 && str[4][0] != '-'){
+			    modo = atoi(str[4]);//Se o segundo parâmetro for "-m", recebe o modo
+			} else{
+				printf("Comando inválido! Por favor, tente novamente\n");
+				return 0;
+			}
+					  
+			if(n>5){
+				if(strcmp(str[5], "-m") == 0 && str[6][0] != '-'){
+			        modo = atoi(str[6]);//Se o terceiro parâmetro for "-m", recebe o modo
+				} else if(strcmp(str[5], "-o") == 0 && str[6][0] != '-'){
+					strcpy(nome_do_arquivo, str[6]);//Se o terceiro parâmetro for "-o", copia o nome
+				} else{
+					printf("Comando inválido! Por favor, tente novamente\n");
+				    return 0;
+				}  
+			}
+		}
+
+      } else if(strcmp(str[1], "-m") == 0 && str[2][0] != '-'){
+		modo = atoi(str[2]);//Se o primeiro parâmetro for "-d", altera o fator deslocamento
+			    
+		if(n>3){
+			if(strcmp(str[3], "-d") == 0 && str[4][0] != '-'){
+		        desloc = atoi(str[4]);//Se o segundo parâmetro for "-d", altera o fator
+			} else if(strcmp(str[3], "-o") == 0 && str[4][0] != '-'){
+			    strcpy(nome_do_arquivo, str[4]);//Se o segundo parâmetro for "-o", copia o nome
+			} else{
+				printf("Comando inválido! Por favor, tente novamente\n");
+				return 0;
+			}
+					  
+		    if(n>5){
+				if(strcmp(str[5], "-o") == 0 && str[6][0] != '-'){
+				    strcpy(nome_do_arquivo, str[6]);//Se o terceiro parâmetro for "-o", copia o nome
+				} else if(strcmp(str[5], "-d") == 0 && str[6][0] != '-'){
+					desloc = atoi(str[6]);//Se o terceiro parâmetro for "-d", altera o fator
+				} else{
+					printf("Comando inválido! Por favor, tente novamente\n");
+					return 0;
+				}
+			}
+		}
+      } else{
+	    printf("Comando inválido! Por favor, tente novamente\n");
+		return 0;
+	  }
+	
 	}
+	
     if(modo > 3){
         modo = 3;
     } else if(modo < 0){
