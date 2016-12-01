@@ -31,14 +31,20 @@ int main(int n, char **str)
     		      desloc = atoi(str[4]);//Se o segundo parâmetor for "-d", altera o fator deslocamento
     		  } else if(strcmp(str[3], "-m") == 0 && str[4][0] != '-'){
     	          modo = atoi(str[4]);//Se o segundo parâmetro for "-m", recebe o modo
-    		  }
+    		  } else{
+        	      printf("Comando inválido! Por favor, tente novamente\n");
+        	      return 0;
+        	  }
     		 
     		  if(n>5){
     		      if(strcmp(str[5], "-m") == 0 && str[6][0] != '-' ){
         		      modo = atoi(str[6]);//Se o terceiro parâmetro for "-m", recebe o modo
         		  }else if(strcmp(str[5], "-d") == 0 && str[6][0] != '-'){
     		          desloc = atoi(str[6]);//Se o terceiro parâmetro for "-d", altera o fator deslocamento
-    		      }
+    		      } else{
+            	      printf("Comando inválido! Por favor, tente novamente\n");
+            	      return 0;
+            	  }
     		  }
 		  }
 
@@ -52,9 +58,9 @@ int main(int n, char **str)
     		  }else if(strcmp(str[3], "-m") == 0 && str[4][0] != '-'){
     	          modo = atoi(str[4]);//Se o segundo parâmetro for "-m", recebe o modo
     		  } else{
-        	        printf("Comando inválido! Por favor, tente novamente\n");
-        	        return 0;
-        	    }
+        	      printf("Comando inválido! Por favor, tente novamente\n");
+        	      return 0;
+        	  }
     		  
     		  if(n>5){
     		      if(strcmp(str[5], "-m") == 0 && str[6][0] != '-'){
@@ -62,8 +68,8 @@ int main(int n, char **str)
         		  }else if(strcmp(str[5], "-o") == 0 && str[6][0] != '-'){
         	          strcpy(nome_do_arquivo, str[6]);//Se o terceiro parâmetro for "-o", copia o nome
         		  } else{
-            	        printf("Comando inválido! Por favor, tente novamente\n");
-                        return 0;
+            	      printf("Comando inválido! Por favor, tente novamente\n");
+                      return 0;
             	  }  
     		  }
 		    }
@@ -77,8 +83,8 @@ int main(int n, char **str)
     		  }else if(strcmp(str[3], "-o") == 0 && str[4][0] != '-'){
     	          strcpy(nome_do_arquivo, str[4]);//Se o segundo parâmetro for "-o", copia o nome
     		  }else{
-        	       printf("Comando inválido! Por favor, tente novamente\n");
-        	       return 0;
+        	      printf("Comando inválido! Por favor, tente novamente\n");
+        	      return 0;
         	  }
     		  
     		  if(n>5){
