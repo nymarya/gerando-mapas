@@ -24,7 +24,7 @@ int cores[N][M] = {
  * @param modo     Tipo de céu (AMANHECER, DIA, ANOITECER OU NOITE)
  */
 
-gerarGradiente(int tam, PIXEL matriz[tam][tam], Modo modo){
+int gerarGradiente(int tam, PIXEL matriz[tam][tam], Modo modo){
 	
 	int i, j;
 	for (i = 0; i < tam; i++) {    

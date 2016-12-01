@@ -13,7 +13,7 @@
  * @param vetor      Arranjo que forma a linha de contorno.
  */
 
-int deslocamentoPonto(int extremo1, int extremo2, int tamanho, int fator, int vetor[tamanho])
+void deslocamentoPonto(int extremo1, int extremo2, int tamanho, int fator, int vetor[tamanho])
 {
 
         if(extremo2 != extremo1 +1){
