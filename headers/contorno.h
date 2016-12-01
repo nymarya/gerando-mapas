@@ -2,8 +2,7 @@
 #define CONTORNO_H
 
 
-//FUNÇÃO PARA GERAR O VETOR COM OS PONTOS COM O FATOR DESLOCAMENTO
-
-int deslocamentoPonto(int index, int auxiliar, int tamanho, int fator, int vetor[tamanho]);
+/** Função que gera linha de contorno no arranjo. **/
+int deslocamentoPonto(int extremo1, int extremo2, int tamanho, int fator, int vetor[tamanho]);
 
 #endif

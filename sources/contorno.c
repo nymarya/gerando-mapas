@@ -4,10 +4,19 @@
 #include "../headers/contorno.h"
 
 
-int deslocamentoPonto(int index, int auxiliar, int tamanho, int fator, int vetor[tamanho])
+/**
+ * Função que gera linha de contorno no arranjo.
+ * @param extremo1   Primeiro índice que é usado para calcular ponto médio.
+ * @param extremo2   Segundo índice que é usado para calcular ponto médio.
+ * @param tamanho    Dimensão do arranjo.
+ * @param fator      Fator do qual é gerado o fator deslocamento.
+ * @param vetor      Arranjo que forma a linha de contorno.
+ */
+
+int deslocamentoPonto(int extremo1, int extremo2, int tamanho, int fator, int vetor[tamanho])
 {
 
-        if(auxiliar != index +1){
+        if(extremo2 != extremo1 +1){
 
             int fator_deslocamento = 2 * (rand()%fator) - fator;   
             if(fator > 1){
@@ -16,13 +25,13 @@ int deslocamentoPonto(int index, int auxiliar, int tamanho, int fator, int vetor
                 fator_deslocamento = 0;
             }
         
-            vetor[(index+auxiliar)/2] =
-                    (vetor[index] + vetor[auxiliar])/2;
-            vetor[(index+auxiliar)/2] += fator_deslocamento;
+            vetor[(extremo1+extremo2)/2] =
+                    (vetor[extremo1] + vetor[extremo2])/2;
+            vetor[(extremo1+extremo2)/2] += fator_deslocamento;
             
     
-            deslocamentoPonto(index, (index+auxiliar)/2, tamanho, fator, vetor);
-            deslocamentoPonto( (index+auxiliar)/2, auxiliar, tamanho, fator, vetor);
+            deslocamentoPonto(extremo1, (extremo1+extremo2)/2, tamanho, fator, vetor);
+            deslocamentoPonto( (extremo1+extremo2)/2, extremo2, tamanho, fator, vetor);
             
           
             

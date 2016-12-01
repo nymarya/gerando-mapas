@@ -5,13 +5,13 @@
 #include "../headers/registro.h"
 
 
-//FUNÇÃO PARA GERAR MATRIZ DA IMAGEM A PARTIR DO VETOR COM AS ALTITUDES
+/** Função para desenhar imagem na matriz. **/
 int gerarMatriz(int tam, PIXEL matriz[tam][tam], int vetor[tam]);
 
-//FUNÇÃO PARA GERAR ARQUIVO DE IMAGEM NO FORMATO PPM
+/** Função para gravar imagem em formato ppm na pasta galeria. **/
 int escreverImagem(int tam, PIXEL matriz[tam][tam], char nome_do_arquivo[30]);
 
-//FUNÇÃO PARA CONFIGURAR UM PIXEL
+/** Função que define os valores do pixel. **/
 void configuraPixel(PIXEL *pixel, int r, int g, int b);
 
 

@@ -7,6 +7,7 @@
 #define N 4
 #define M 3
 
+/** Cores iniciais de cada tipo de céu **/
 
 int cores[N][M] = {
 	{147, 25, 255}, //amanhecer
@@ -16,6 +17,13 @@ int cores[N][M] = {
 
 };
 
+/**
+ * Função para gerar gradiente no céu.
+ * @param tam      Dimensão da matriz (quadrada)
+ * @param matriz   Matriz que será alterada
+ * @param modo     Tipo de céu (AMANHECER, DIA, ANOITECER OU NOITE)
+ */
+
 gerarGradiente(int tam, PIXEL matriz[tam][tam], Modo modo){
 	
 	int i, j;
@@ -24,11 +32,11 @@ gerarGradiente(int tam, PIXEL matriz[tam][tam], Modo modo){
 		if(modo == AMANHECER){
 			cores[modo][2]--;
 			if(i%5 == 0){
-				cores[modo][1]++;
+			   cores[modo][1]++;
 			}
 		} else if( modo == DIA){
 		    if(i%2 ==0){
-				cores[modo][2]--;
+			    cores[modo][2]--;
 				cores[modo][1]--;
 			} if(i%5 == 0){
 				cores[modo][0]++;

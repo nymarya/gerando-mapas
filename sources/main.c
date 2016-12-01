@@ -13,8 +13,11 @@ int main(int n, char **str)
     
     char nome_do_arquivo[30];
     int desloc;
-    desloc = 128; // fator deslocamento padrão
-    strcpy(nome_do_arquivo, "terreno.ppm"); //nome do arquivo padrão
+    /**
+     * Valores padrão do fator deslocamento, nome do arquivo e moto da imagem
+     */
+    desloc = 128; 
+    strcpy(nome_do_arquivo, "terreno.ppm");
     Modo modo = AMANHECER;
 
 	if(n>1){
@@ -25,14 +28,14 @@ int main(int n, char **str)
     		  if(strcmp(str[3], "-d") == 0 && str[4][0] != '-' ){
     		      desloc = atoi(str[4]);//Se o segundo parâmetor for "-d", altera o fator deslocamento
     		  } else if(strcmp(str[3], "-m") == 0 && str[4][0] != '-'){
-    	          modo = atoi(str[4]);//Se o terceiro parâmetro for "-m", recebe o modo
+    	          modo = atoi(str[4]);//Se o segundo parâmetro for "-m", recebe o modo
     		  }
     		 
     		  if(n>5){
     		      if(strcmp(str[5], "-m") == 0 && str[6][0] != '-' ){
         		      modo = atoi(str[6]);//Se o terceiro parâmetro for "-m", recebe o modo
         		  }else if(strcmp(str[5], "-d") == 0 && str[6][0] != '-'){
-    		          desloc = atoi(str[6]);//Se o segundo parâmetor for "-d", altera o fator deslocamento
+    		          desloc = atoi(str[6]);//Se o terceiro parâmetro for "-d", altera o fator deslocamento
     		      }
     		  }
 		  }
@@ -45,14 +48,14 @@ int main(int n, char **str)
     	      if(strcmp(str[3], "-o") == 0 && str[4][0] != '-'){
     		      strcpy(nome_do_arquivo, str[4]);//Se o segundo parâmetro for "-o", copia o nome
     		  }else if(strcmp(str[3], "-m") == 0 && str[4][0] != '-'){
-    	          modo = atoi(str[4]);//Se o terceiro parâmetro for "-m", recebe o modo
+    	          modo = atoi(str[4]);//Se o segundo parâmetro for "-m", recebe o modo
     		  }
     		  
     		  if(n>5){
     		      if(strcmp(str[5], "-m") == 0 && str[6][0] != '-'){
         		      modo = atoi(str[6]);//Se o terceiro parâmetro for "-m", recebe o modo
         		  }else if(strcmp(str[5], "-o") == 0 && str[6][0] != '-'){
-        	          strcpy(nome_do_arquivo, str[6]);//Se o segundo parâmetro for "-o", copia o nome
+        	          strcpy(nome_do_arquivo, str[6]);//Se o terceiro parâmetro for "-o", copia o nome
         		  }
     		  }
 		    }
@@ -62,14 +65,14 @@ int main(int n, char **str)
 	        
 	        if(n>3){
     	      if(strcmp(str[3], "-d") == 0 && str[4][0] != '-'){
-    	          desloc = atoi(str[4]);//Se o terceiro parâmetro for "-m", recebe o modo
+    	          desloc = atoi(str[4]);//Se o segundo parâmetro for "-d", altera o fator
     		  }else if(strcmp(str[3], "-o") == 0 && str[4][0] != '-'){
     	          strcpy(nome_do_arquivo, str[4]);//Se o segundo parâmetro for "-o", copia o nome
     		  }
     		  
     		  if(n>5){
     		      if(strcmp(str[5], "-o") == 0 && str[6][0] != '-'){
-        		      strcpy(nome_do_arquivo, str[6]);//Se o segundo parâmetro for "-o", copia o nome
+        		      strcpy(nome_do_arquivo, str[6]);//Se o terceiro parâmetro for "-o", copia o nome
         		  } else if(strcmp(str[5], "-d") == 0 && str[6][0] != '-'){
         	          desloc = atoi(str[6]);//Se o terceiro parâmetro for "-d", altera o fator
         		  }
@@ -93,8 +96,10 @@ int main(int n, char **str)
 		vetor[i] = 0;
 	}
 
-    //Gera números mais diversificados
-    //http://stackoverflow.com/a/17799756
+    /**
+     * Gera números mais diversificados.
+     * http://stackoverflow.com/a/17799756
+     */
 	srand(time(0) * getpid());
 
 	vetor[0] = rand()%200+70;
