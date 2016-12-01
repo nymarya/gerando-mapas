@@ -39,7 +39,7 @@ int main(int n, char **str)
             if(n>5){
     		if(strcmp(str[5], "-m") == 0 && str[6][0] != '-' ){
         	    modo = atoi(str[6]);//Se o terceiro parâmetro for "-m", recebe o modo
-        	}else if(strcmp(str[5], "-d") == 0 && str[6][0] != '-'){
+        	} else if(strcmp(str[5], "-d") == 0 && str[6][0] != '-'){
     		    desloc = atoi(str[6]);//Se o terceiro parâmetro for "-d", altera o fator deslocamento
     		} else{
             	    printf("Comando inválido! Por favor, tente novamente\n");
@@ -73,7 +73,7 @@ int main(int n, char **str)
     	    }
 	}
 
-    }else if(strcmp(str[1], "-m") == 0 && str[2][0] != '-'){
+    } else if(strcmp(str[1], "-m") == 0 && str[2][0] != '-'){
         modo = atoi(str[2]);//Se o primeiro parâmetro for "-d", altera o fator deslocamento
 	        
 	if(n>3){
