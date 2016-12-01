@@ -28,9 +28,9 @@ int main(int n, char **str)
 			  
 		  if(n>3){
 	        if(strcmp(str[3], "-d") == 0 && str[4][0] != '-' ){
-			    desloc = atoi(str[4]);//Se o segundo parâmetor for "-d", altera o fator deslocamento
+			  desloc = atoi(str[4]);//Se o segundo parâmetor for "-d", altera o fator deslocamento
 			} else if(strcmp(str[3], "-m") == 0 && str[4][0] != '-'){
-				modo = atoi(str[4]);//Se o segundo parâmetro for "-m", recebe o modo
+		      modo = atoi(str[4]);//Se o segundo parâmetro for "-m", recebe o modo
 			} else{
 			    printf("Comando inválido! Por favor, tente novamente\n");
 			    return 0;
