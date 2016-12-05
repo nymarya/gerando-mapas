@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include "../headers/registro.h"
 #include "../headers/contorno.h"
 
@@ -29,8 +28,14 @@ void deslocamentoPonto(int extremo1, int extremo2, int tamanho, int fator, int v
             vetor[(extremo1+extremo2)/2] =
                 (vetor[extremo1] + vetor[extremo2])/2;
                     
-            vetor[(extremo1+extremo2)/2] += fator_deslocamento;
-            
+            if(vetor[(extremo1+extremo2)/2] + fator_deslocamento >tamanho){
+                vetor[(extremo1+extremo2)/2] = tamanho;
+            } else if(vetor[(extremo1+extremo2)/2] + fator_deslocamento < 0){
+                vetor[(extremo1+extremo2)/2] = 0;
+            } else{
+                vetor[(extremo1+extremo2)/2] += fator_deslocamento;
+            }
+    
             deslocamentoPonto(extremo1, (extremo1+extremo2)/2, tamanho, fator, vetor);
             deslocamentoPonto( (extremo1+extremo2)/2, extremo2, tamanho, fator, vetor);
             
