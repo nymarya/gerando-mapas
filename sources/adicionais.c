@@ -29,13 +29,13 @@ int gerarGradiente(int tam, PIXEL matriz[tam][tam], Modo modo){
 	int i, j;
 	for (i = 0; i < tam; i++) {    
 	
-		if(modo == AMANHECER){
+		if(modo == AMANHECER && cores[modo][2] > 0){
 			cores[modo][2]--;
 			if(i%5 == 0){
 			   cores[modo][1]++;
 			}
 		} else if( modo == DIA){
-		    if(i%2 ==0){
+		    if(i%2 ==0 && cores[modo][1] >= 0 && cores[modo][2] >=0){
 			    cores[modo][2]--;
 				cores[modo][1]--;
 			} if(i%5 == 0){

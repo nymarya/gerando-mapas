@@ -41,7 +41,6 @@ Para escolher o fator deslocamento, basta passar o parâmetro -d ao executar. Po
 
     ./teste -d 200
     
-Recomendamos passar um valor entre 128 e 256. Quanto maior o fator, mais rugoso será o terreno.
 Caso não haja parâmetro -d, o fator será 128.
 Para escolher o cenário da imagem, basta utilizar o parâmetro -m. Por exemplo
 
