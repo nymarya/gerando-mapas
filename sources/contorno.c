@@ -26,7 +26,7 @@ void deslocamentoPonto(int extremo1, int extremo2, int tamanho, int fator, int v
             }
         
             vetor[(extremo1+extremo2)/2] =
-                    (vetor[extremo1] + vetor[extremo2])/2;
+                (vetor[extremo1] + vetor[extremo2])/2;
                     
             if(vetor[(extremo1+extremo2)/2] + fator_deslocamento >= tamanho){
                 vetor[(extremo1+extremo2)/2] = tamanho;
