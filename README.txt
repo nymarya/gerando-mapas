@@ -25,7 +25,7 @@ Como compilar:
 
 Para compilar o projeto, basta acessar a pasta "sources" pelo terminal e digitar o comando abaixo
 
-    gcc main.c contorno.c imagem.c adicionais.c -o teste
+    gcc main.c contorno.c imagem.c adicionais.c -lm -o teste
     
 Comando para executar o programa
     
