@@ -131,12 +131,12 @@ int main(int n, char **str)
     /** Gera primeira montanha */
     montanha1[0] = rand()%200+70;
     montanha1[tam-1] = rand()%200+70;
-	deslocamentoPonto(0, tam-1, tam, desloc, montanha1);
+    deslocamentoPonto(0, tam-1, tam, desloc, montanha1);
 
-	/** Gera segunda montanha */
-	montanha2[0] = rand()%150+100;
+    /** Gera segunda montanha */
+    montanha2[0] = rand()%150+100;
     montanha2[tam-1] = rand()%150+100;
-	deslocamentoPonto(0, tam-1, tam, desloc, montanha2);
+    deslocamentoPonto(0, tam-1, tam, desloc, montanha2);
 
     gerarGradiente(tam, matriz, modo);
     gerarMatriz(tam, matriz, montanha1, montanha2);
