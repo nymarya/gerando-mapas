@@ -29,43 +29,43 @@ int cores[N][M] = {
 
 int gerarGradiente(int tam, PIXEL matriz[tam][tam], Modo modo){
 	
-	int i, j;
-	for (i = 0; i < tam; i++) {    
-	
-	    if(modo == AMANHECER){
-	        (cores[modo][2] > 0)? cores[modo][2]-- : 0;
-	        if(i%5 == 0){
-		    cores[modo][1]++;
-	        }
-	    } else if( modo == DIA){
-	        if(i%2 ==0){
-		    (cores[modo][1] > 0)? cores[modo][1]-- : 0;
-		    (cores[modo][2] > 0)? cores[modo][2]-- : 0;
-	        } 
-		if(i%5 == 0){
-		    (cores[modo][0] < 255)? cores[modo][0]++ : 255;
-	        }
-	    } else if( modo == ANOITECER){
-	        if(i%2 ==0){
-		    (cores[modo][2] < 255)? cores[modo][2]++ : 255;
-	        } 
-		if(i%5 == 0){
-		    (cores[modo][1] < 255)? cores[modo][1]++ : 255;
-	        }
-	    } else if( modo == NOITE){
-	        if(i%5 == 0){
-		    (cores[modo][2] < 255)? cores[modo][2]++ : 255;
-	        }
-	        gerarLua(tam, matriz);
-	    }
+    int i, j;
+    for (i = 0; i < tam; i++) {    
 
-	    for (j = 0; j < tam; j++) {
-	        configuraPixel(&matriz[i][j], cores[modo][0], cores[modo][1], cores[modo][2]);
+        if(modo == AMANHECER){
+	    (cores[modo][2] > 0)? cores[modo][2]-- : 0;
+	    if(i%5 == 0){
+	        cores[modo][1]++;
 	    }
-		
-	}
-	
-	return 0;
+        } else if( modo == DIA){
+	    if(i%2 ==0){
+	        (cores[modo][1] > 0)? cores[modo][1]-- : 0;
+	        (cores[modo][2] > 0)? cores[modo][2]-- : 0;
+	    } 
+	    if(i%5 == 0){
+	        (cores[modo][0] < 255)? cores[modo][0]++ : 255;
+	    }
+        } else if( modo == ANOITECER){
+	    if(i%2 ==0){
+	        (cores[modo][2] < 255)? cores[modo][2]++ : 255;
+	    } 
+	    if(i%5 == 0){
+	        (cores[modo][1] < 255)? cores[modo][1]++ : 255;
+	    }
+        } else if( modo == NOITE){
+	    if(i%5 == 0){
+	        (cores[modo][2] < 255)? cores[modo][2]++ : 255;
+	    }
+	    gerarLua(tam, matriz);
+        }
+
+         for (j = 0; j < tam; j++) {
+	    configuraPixel(&matriz[i][j], cores[modo][0], cores[modo][1], cores[modo][2]);
+        }
+
+    }
+
+    return 0;
 
 }
 
