@@ -16,31 +16,31 @@
 void deslocamentoPonto(int extremo1, int extremo2, int tamanho, int fator, int vetor[tamanho])
 {
 
-        if(extremo2 != extremo1 +1){
+    if(extremo2 != extremo1 +1){
 
-            int fator_deslocamento = 2 * (rand()%fator) - fator;   
-            if(fator > 1){
-                fator /= 2;
-            } else{
-                fator_deslocamento = 0;
-            }
-        
-            vetor[(extremo1+extremo2)/2] =
-                (vetor[extremo1] + vetor[extremo2])/2;
-                    
-            if(vetor[(extremo1+extremo2)/2] + fator_deslocamento >tamanho){
-                vetor[(extremo1+extremo2)/2] = tamanho;
-            } else if(vetor[(extremo1+extremo2)/2] + fator_deslocamento < 0){
-                vetor[(extremo1+extremo2)/2] = 0;
-            } else{
-                vetor[(extremo1+extremo2)/2] += fator_deslocamento;
-            }
-    
-            deslocamentoPonto(extremo1, (extremo1+extremo2)/2, tamanho, fator, vetor);
-            deslocamentoPonto( (extremo1+extremo2)/2, extremo2, tamanho, fator, vetor);
-            
-          
-            
+        int fator_deslocamento = 2 * (rand()%fator) - fator;   
+        if(fator > 1){
+            fator /= 2;
+        } else{
+            fator_deslocamento = 0;
         }
+
+        vetor[(extremo1+extremo2)/2] =
+            (vetor[extremo1] + vetor[extremo2])/2;
+
+        if(vetor[(extremo1+extremo2)/2] + fator_deslocamento >tamanho){
+            vetor[(extremo1+extremo2)/2] = tamanho;
+        } else if(vetor[(extremo1+extremo2)/2] + fator_deslocamento < 0){
+            vetor[(extremo1+extremo2)/2] = 0;
+        } else{
+            vetor[(extremo1+extremo2)/2] += fator_deslocamento;
+        }
+
+        deslocamentoPonto(extremo1, (extremo1+extremo2)/2, tamanho, fator, vetor);
+        deslocamentoPonto( (extremo1+extremo2)/2, extremo2, tamanho, fator, vetor);
+
+
+
+    }
         
 }
