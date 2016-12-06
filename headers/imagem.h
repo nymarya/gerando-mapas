@@ -6,7 +6,7 @@
 
 
 /** Função para desenhar imagem na matriz. **/
-int gerarMatriz(int tam, PIXEL matriz[tam][tam], int vetor[tam]);
+int gerarMatriz(int tam, PIXEL matriz[tam][tam], int montanha1[tam], int montanha2[tam] );
 
 /** Função para gravar imagem em formato ppm na pasta galeria. **/
 int escreverImagem(int tam, PIXEL matriz[tam][tam], char nome_do_arquivo[30]);

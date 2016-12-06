@@ -112,12 +112,14 @@ int main(int n, char **str)
     int tam = 513; //2^9+1
 
 	
-    int vetor[tam]; 
+    int montanha1[tam];
+    int montanha2[tam];
     PIXEL matriz[tam][tam];
 
     int i;
     for (i = 0; i < tam; i++){
-	vetor[i] = 0;
+	montanha1[i] = 0;
+	montanha2[i] = 0;
     }
 
     /**
@@ -125,14 +127,19 @@ int main(int n, char **str)
      * http://stackoverflow.com/a/17799756
      */
     srand(time(0) * getpid());
-
-    vetor[0] = rand()%200+70;
-    vetor[tam-1] = rand()%200+70;
     
+    /** Gera primeira montanha */
+    montanha1[0] = rand()%200+70;
+    montanha1[tam-1] = rand()%200+70;
+	deslocamentoPonto(0, tam-1, tam, desloc, montanha1);
 
-    deslocamentoPonto(0, tam-1, tam, desloc, vetor);
+	/** Gera segunda montanha */
+	montanha2[0] = rand()%150+100;
+    montanha2[tam-1] = rand()%150+100;
+	deslocamentoPonto(0, tam-1, tam, desloc, montanha2);
+
     gerarGradiente(tam, matriz, modo);
-    gerarMatriz(tam, matriz, vetor);
+    gerarMatriz(tam, matriz, montanha1, montanha2);
     escreverImagem(tam, matriz, nome_do_arquivo);
 
     return 0;

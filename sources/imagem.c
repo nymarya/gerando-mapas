@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
+#include <math.h>
 #include "../headers/registro.h"
 #include "../headers/imagem.h"
 
@@ -20,19 +21,24 @@ void configuraPixel(PIXEL *pixel, int r, int g, int b){
 
 /**
  * Função para desenhar imagem na matriz.
- * @param tam      Dimensão da matriz (quadrada) e do vetor
- * @param matriz   Matriz que será alterada
- * @param vetor    Vetor que servirá como linha de contorno
+ * @param tam          Dimensão da matriz (quadrada) e do vetor
+ * @param matriz       Matriz que será alterada
+ * @param montanha1    Vetor que servirá como linha de contorno de uma montanha
+ * @param montanha2    Vetor que servirá como linha de contorno de uma montanha
  */
-int gerarMatriz(int tam, PIXEL matriz[tam][tam], int vetor[tam]){
+int gerarMatriz(int tam, PIXEL matriz[tam][tam], int montanha1[tam], int montanha2[tam]){
 	
     int i, j;
     for (i = 0; i < tam; i++) {
 	for (j = 0; j < tam; j++) {
+	    
+		if (i > montanha1[j] && i > montanha2[j]) {
+				configuraPixel(&matriz[i][j], 1, 2, 18);
+			} else if (i > montanha2[j]) {
+				configuraPixel(&matriz[i][j], 5, 10, 25);
+			}
 
-	    if (i > vetor[j]) {
-		configuraPixel(&matriz[i][j], 1, 2, 18);
-	    } 
+	     
 				
 	}
     }
