@@ -5,6 +5,32 @@
 #include "../headers/registro.h"
 #include "../headers/imagem.h"
 
+#define N 4
+#define M 2
+#define L 3
+
+
+int montanhas[N][M][L] = {
+    {
+        {90, 90, 90},
+        {59, 59, 29}
+    },
+    
+    {
+        {90, 90, 90},
+        {102, 101, 51}
+    },
+    
+    {
+        {1, 2, 18},
+        {5, 10, 25}
+    },
+    {
+        {0, 0, 0},
+        {5, 10, 25}
+    }
+};
+
 /**
  * Função que define os valores do pixel.
  * @param pixel  Referência ao pixel que será alterado
@@ -26,17 +52,19 @@ void configuraPixel(PIXEL *pixel, int r, int g, int b){
  * @param montanha1    Vetor que servirá como linha de contorno de uma montanha
  * @param montanha2    Vetor que servirá como linha de contorno de uma montanha
  */
-int gerarMatriz(int tam, PIXEL matriz[tam][tam], int montanha1[tam], int montanha2[tam]){
+int gerarMatriz(int tam, PIXEL matriz[tam][tam], int montanha1[tam], int montanha2[tam], Modo modo){
 	
     int i, j;
     for (i = 0; i < tam; i++) {
 	for (j = 0; j < tam; j++) {
 	    
-		if (i > montanha1[j] && i > montanha2[j]) {
-				configuraPixel(&matriz[i][j], 1, 2, 18);
-			} else if (i > montanha2[j]) {
-				configuraPixel(&matriz[i][j], 5, 10, 25);
-			}
+		if (i >= montanha1[j] && i >= montanha2[j]) {
+		    configuraPixel(&matriz[i][j], montanhas[modo][1][0], montanhas[modo][1][1], montanhas[modo][1][2]);
+				
+		} else if (i >= montanha2[j] || (i >= montanha1[j] && i <= montanha2[j])  ) {
+		    configuraPixel(&matriz[i][j], montanhas[modo][0][0], montanhas[modo][0][1], montanhas[modo][0][2]);
+				
+		}
 
 	     
 				
