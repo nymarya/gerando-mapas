@@ -93,7 +93,7 @@ int main(int n, char **str)
                         printf("Comando inválido! Por favor, tente novamente\n");
                         return 0;
     	            }
-	           }
+               }
             }
         } else{
             printf("Comando inválido! Por favor, tente novamente\n");
