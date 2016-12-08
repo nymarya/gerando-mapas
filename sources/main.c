@@ -129,8 +129,8 @@ int main(int n, char **str)
     srand(time(0) * getpid());
     
     /** Gera primeira montanha */
-    montanha1[0] = rand()%200+70;
-    montanha1[tam-1] = rand()%200+70;
+    montanha1[0] = rand()%250+70;
+    montanha1[tam-1] = rand()%250+70;
 	deslocamentoPonto(0, tam-1, tam, desloc, montanha1);
 
 	/** Gera segunda montanha */
@@ -139,7 +139,7 @@ int main(int n, char **str)
 	deslocamentoPonto(0, tam-1, tam, desloc, montanha2);
 
     gerarGradiente(tam, matriz, modo);
-    gerarMatriz(tam, matriz, montanha1, montanha2);
+    gerarMatriz(tam, matriz, montanha1, montanha2, modo);
     escreverImagem(tam, matriz, nome_do_arquivo);
 
     return 0;

@@ -12,22 +12,22 @@
 
 int montanhas[N][M][L] = {
     {
-        {90, 90, 90},
-        {59, 59, 29}
+        {48, 48, 48},
+        {31, 31, 35}
     },
     
     {
-        {90, 90, 90},
-        {102, 101, 51}
+        {70, 70, 70},
+        {38, 38, 29}
     },
     
     {
-        {1, 2, 18},
-        {5, 10, 25}
+        {5, 10, 20},
+        {1, 2, 18}
     },
     {
-        {0, 0, 0},
-        {5, 10, 25}
+        {1, 3, 3},
+        {0, 0, 0}
     }
 };
 
@@ -40,9 +40,9 @@ int montanhas[N][M][L] = {
  */
 void configuraPixel(PIXEL *pixel, int r, int g, int b){
 	
-     pixel->r = r;
-     pixel->g = g;
-     pixel->b = b;
+    pixel->r = r;
+    pixel->g = g;
+    pixel->b = b;
 }
 
 /**
@@ -55,22 +55,17 @@ void configuraPixel(PIXEL *pixel, int r, int g, int b){
 int gerarMatriz(int tam, PIXEL matriz[tam][tam], int montanha1[tam], int montanha2[tam], Modo modo){
 	
     int i, j;
+    
     for (i = 0; i < tam; i++) {
-	for (j = 0; j < tam; j++) {
-	    
-		if (i >= montanha1[j] && i >= montanha2[j]) {
-		    configuraPixel(&matriz[i][j], montanhas[modo][1][0], montanhas[modo][1][1], montanhas[modo][1][2]);
-				
-		} else if (i >= montanha2[j] || (i >= montanha1[j] && i <= montanha2[j])  ) {
-		    configuraPixel(&matriz[i][j], montanhas[modo][0][0], montanhas[modo][0][1], montanhas[modo][0][2]);
-				
-		}
-
-	     
-				
-	}
+	    for (j = 0; j < tam; j++) {
+		    if (i >= montanha1[j] && i >= montanha2[j]) {
+		        configuraPixel(&matriz[i][j], montanhas[modo][1][0], montanhas[modo][1][1], montanhas[modo][1][2]);	
+		    } else if (i >= montanha2[j] || (i >= montanha1[j] && i <= montanha2[j])  ) {
+		        configuraPixel(&matriz[i][j], montanhas[modo][0][0], montanhas[modo][0][1], montanhas[modo][0][2]);
+		    }
+		
+	    }
     }
-	
     return 0;
 
 }
@@ -98,11 +93,11 @@ int escreverImagem(int tam, PIXEL matriz[tam][tam], char nome_do_arquivo[30]){
 
     int i, j;
     for(i=0; i<tam; i++){
-	for(j=0; j<tam; j++){
-	    fprintf(arquivo, "%i %i %i", matriz[i][j].r, matriz[i][j].g, matriz[i][j].b);
+        for(j=0; j<tam; j++){
+	        fprintf(arquivo, "%i %i %i", matriz[i][j].r, matriz[i][j].g, matriz[i][j].b);
+	        fprintf(arquivo, "\n");
+	    }
 	    fprintf(arquivo, "\n");
-	}
-	fprintf(arquivo, "\n");
     }
 	
     free(caminho);
