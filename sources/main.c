@@ -127,8 +127,13 @@ int main(int n, char **str)
     srand(time(0) * getpid());
     
     /** Gera primeira montanha */
+<<<<<<< HEAD
     montanha1[0] = rand()%250+70;
     montanha1[tam-1] = rand()%250+70;
+=======
+    montanha1[0] = rand()%200+70;
+    montanha1[tam-1] = rand()%200+70;
+>>>>>>> refs/heads/master
     deslocamentoPonto(0, tam-1, tam, desloc, montanha1);
 
     /** Gera segunda montanha */

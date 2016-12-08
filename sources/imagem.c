@@ -57,6 +57,7 @@ int gerarMatriz(int tam, PIXEL matriz[tam][tam], int montanha1[tam], int montanh
     int i, j;
     
     for (i = 0; i < tam; i++) {
+<<<<<<< HEAD
 	    for (j = 0; j < tam; j++) {
 		    if (i >= montanha1[j] && i >= montanha2[j]) {
 		        configuraPixel(&matriz[i][j], montanhas[modo][1][0], montanhas[modo][1][1], montanhas[modo][1][2]);	
@@ -65,9 +66,17 @@ int gerarMatriz(int tam, PIXEL matriz[tam][tam], int montanha1[tam], int montanh
 		    }
 		
 	    }
+=======
+        for (j = 0; j < tam; j++) {    
+	    if (i > montanha1[j] && i > montanha2[j]) {
+	        configuraPixel(&matriz[i][j], 1, 2, 18);
+	    } else if (i > montanha2[j]) {
+		configuraPixel(&matriz[i][j], 5, 10, 25);
+	    }
+	}
+>>>>>>> refs/heads/master
     }
     return 0;
-
 }
 
 
