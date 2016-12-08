@@ -60,7 +60,7 @@ int main(int n, char **str)
                    return 0;
                }
 
-  	          if(n>5){
+               if(n>5){
                   if(strcmp(str[5], "-m") == 0 && str[6][0] != '-'){
                       modo = atoi(str[6]);//Se o terceiro parâmetro for "-m", recebe o modo
                   } else if(strcmp(str[5], "-o") == 0 && str[6][0] != '-'){
