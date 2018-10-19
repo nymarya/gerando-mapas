@@ -1,28 +1,19 @@
 # gerando-terrenos
 
-Disciplina:
-Práticas de Técnicas de Programação
-
-Autores: 
-Jaine Rannow Budke
-Mayra Dantas de Azevedo
-
-Sobre o projeto:
-
-    Elementos básicos implementados:
-        - Geração da linha de contorno em um arranjo (Jaine e Mayra)
-        - Leitura de parâmetros de configuração pela linha de comando (Mayra)
-        - Criação de imagem a partir da linha de contorno (Jaine e Mayra)
+## Sobre o projeto
+Elementos básicos implementados:
+- Geração da linha de contorno em um arranjo (Jaine e Mayra)
+- Leitura de parâmetros de configuração pela linha de comando (Mayra)
+- Criação de imagem a partir da linha de contorno (Jaine e Mayra)
         
-    Elementos adicionais implementados:
-        - Diferentes cenários: amanhecer, dia, anoitecer e noite (Mayra)
-        - Gradiente para o céu de cada modo da imagem (Mayra)
-        - Inclusão da lua (Jaine)
-        - Cadeia de montanhas (Jaine)
-        
-        
-Como compilar:
+Elementos adicionais implementados:
+- Diferentes cenários: amanhecer, dia, anoitecer e noite (Mayra)
+- Gradiente para o céu de cada modo da imagem (Mayra)
+- Inclusão da lua (Jaine)
+- Cadeia de montanhas (Jaine)
 
+
+## Como compilar
 Para compilar o projeto, basta acessar a pasta "sources" pelo terminal e digitar o comando abaixo
 
     gcc main.c contorno.c imagem.c adicionais.c -lm -o teste
@@ -30,7 +21,7 @@ Para compilar o projeto, basta acessar a pasta "sources" pelo terminal e digitar
 Comando para executar o programa
     
     ./teste
-    
+
 Para escolher o nome do arquivo, basta passar o parâmetro -o ao executar. Por exemplo
 
     ./teste -o montanha.ppm
@@ -59,3 +50,8 @@ Caso fuja desse padrão, será retornado um erro. Exemplos de modos errados de e
     
     ./teste -o -d 256 (parâmetros vazios)
     ./teste -d 207 -d 200 (parâmetros repetidos)
+
+
+
+## Autoria
+Desenvolvido por _Jaine Budke_ e  _Mayra Dantas_, 2016.2
